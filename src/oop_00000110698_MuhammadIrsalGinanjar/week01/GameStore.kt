@@ -19,7 +19,7 @@ fun main() {
     )
 }
 
-// Langkah 2: Logika Diskon (Expression Body)
+
 // Harga > 500rb diskon 20%, selain itu 10%
 fun calculateDiscount(price: Int): Int = if (price > 500000) (price * 0.2).toInt() else (price * 0.1).toInt()
 
