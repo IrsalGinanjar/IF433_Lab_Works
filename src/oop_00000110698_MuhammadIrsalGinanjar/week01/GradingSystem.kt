@@ -1,14 +1,14 @@
 package oop_00000110698_MuhammadIrsalGinanjar.week01
 
 fun main() {
-    // REFACTOR: Gunakan val dan hapus tipe data eksplisit
+    // 1. Variabel dengan Refactor (val & type inference)
     val name = "John Thor"
     val score = 80
 
-    // REFACTOR: String Template ($name)
+    // 2. String Template
     println("Nama: $name, Nilai: $score")
 
-    // Logika Grade menggunakan when
+    // 3. Logika Grade menggunakan when (Range)
     val grade = when (score) {
         in 90..100 -> "A"
         in 80..89 -> "B"
@@ -17,9 +17,16 @@ fun main() {
     }
     println("Grade kamu: $grade")
 
-    // Panggil DI DALAM main()
+    // 4. Memanggil Function (Expression Body)
     println("Status: ${calculateStatus(score)}")
+
+    // 5. Null Safety & Elvis Operator (Ditambahkan di akhir main)
+    val studentId: String? = null
+
+    // Jika null, gunakan nilai default 0
+    val idLength = studentId?.length ?: 0
+    println("Panjang ID: $idLength")
 }
 
-// Tulis DI LUAR main()
+// Function di luar main
 fun calculateStatus(score: Int) = if (score > 75) "Lulus" else "Tidak Lulus"
