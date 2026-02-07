@@ -8,7 +8,7 @@ fun main() {
 
     println("Radius: $radius, Area: $area")
 
-    // Langkah 3: Memanggil fungsi expression body di dalam println
+
     println(checkSize(area))
 }
 
