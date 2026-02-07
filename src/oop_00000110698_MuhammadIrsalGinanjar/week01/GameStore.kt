@@ -23,7 +23,7 @@ fun main() {
 // Harga > 500rb diskon 20%, selain itu 10%
 fun calculateDiscount(price: Int): Int = if (price > 500000) (price * 0.2).toInt() else (price * 0.1).toInt()
 
-// Langkah 3: Fungsi Cetak Struk
+
 fun printReceipt(title: String, finalPrice: Int, note: String) {
     println("--- Struk Pembelian SteamKW ---")
     println("Game: $title")
