@@ -12,5 +12,5 @@ fun main() {
     println(checkSize(area))
 }
 
-// Langkah 3: Mengubah fungsi menjadi Expression Body dengan return String
+
 fun checkSize(area: Double) = if (area > 100) "This is a Big Circle" else "This is a Small Circle"
