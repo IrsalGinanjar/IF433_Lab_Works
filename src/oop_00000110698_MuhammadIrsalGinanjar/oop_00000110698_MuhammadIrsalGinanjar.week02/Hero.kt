@@ -15,4 +15,3 @@ class Hero(val name: String, val damage: Int) {
         return hp > 0
     }
 }
-123
