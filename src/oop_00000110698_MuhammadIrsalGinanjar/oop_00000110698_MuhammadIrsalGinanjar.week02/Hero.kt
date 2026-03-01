@@ -14,4 +14,4 @@ class Hero(val name: String, val damage: Int) {
     fun isAlive(): Boolean {
         return hp > 0
     }
-}
+}12
