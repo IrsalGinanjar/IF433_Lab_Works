@@ -26,4 +26,4 @@ fun main() {
     val developer = Developer(name = "Budi", baseSalary = 8000000, programmingLanguage = "Kotlin")
     developer.work()
     println("Bonus Developer: Rp ${developer.calculateBonus()}")
-}123
+}
