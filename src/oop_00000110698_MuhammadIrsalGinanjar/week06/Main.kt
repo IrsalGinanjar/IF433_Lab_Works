@@ -6,10 +6,30 @@ fun processCheckout(method: PaymentMethod, amount: Double) {
 }
 
 fun main() {
-    // ... [Kode sebelumnya tetap berjalan di background otak kita, tapi kita fokus ke Smart Home]
+    val myWatch = Smartwatch()
+    myWatch.showTime()
+    val myPhone = Smartphone()
+    myPhone.turnOn()
 
-    println("\n=== TESTING SMART HOME INSTANTIATION ===")
+    println("\n=== TESTING CHECKOUT ===")
+    processCheckout(Gopay(), 50000.0)
+
+    println("\n=== TESTING SMART HOME SYSTEM ===")
     val myLamp = SmartLamp("L01", "Ruang Tamu")
     val mySpeaker = SmartSpeaker("S01", "Google Nest Dapur")
     val myCCTV = SmartCCTV("C01", "Ezviz Garasi")
+
+    val hub = SmartHomeHub()
+    hub.addDevice(myLamp)
+    hub.addDevice(mySpeaker)
+    hub.addDevice(myCCTV)
+
+    // Menyalakan manual untuk test
+    myLamp.turnOn()
+    mySpeaker.turnOn()
+    myCCTV.turnOn()
+
+    // Test integrasi Hub
+    hub.activateSecurityMode()
+    hub.turnOffAllSwitches()
 }
