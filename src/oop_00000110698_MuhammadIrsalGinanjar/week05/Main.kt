@@ -36,6 +36,13 @@ fun main() {
     for (payment in paymentMethods) {
         println("Memproses pembayaran Rp75000 untuk: ${payment.accountName}")
         payment.processPayment(75000.0)
+
+        // Smart Casting EWallet Challenge
+        if (payment is EWallet) {
+            println("=> Smart Casting terdeteksi EWallet. Melakukan Top Up...")
+            payment.topUp(50000.0)
+            payment.processPayment(75000.0)
+        }
         println()
     }
 }
