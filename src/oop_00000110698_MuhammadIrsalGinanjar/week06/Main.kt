@@ -1,22 +1,15 @@
 package oop_00000110698_MuhammadIrsalGinanjar.week06
 
-// Fungsi ini Decoupled! Tidak peduli kelas aslinya apa.
 fun processCheckout(method: PaymentMethod, amount: Double) {
     println("-> Memulai checkout...")
-    method.pay(amount) // Dynamic polymorphism in action
+    method.pay(amount)
 }
 
 fun main() {
-    val myWatch = Smartwatch()
-    myWatch.showTime()
+    // ... [Kode sebelumnya tetap berjalan di background otak kita, tapi kita fokus ke Smart Home]
 
-    val myPhone = Smartphone()
-    myPhone.turnOn()
-
-    val pay1 = Gopay()
-    val pay2 = CreditCard()
-
-    println("\n=== TESTING CHECKOUT ===")
-    processCheckout(method = pay1, amount = 50000.0)
-    processCheckout(method = pay2, amount = 150000.0)
+    println("\n=== TESTING SMART HOME INSTANTIATION ===")
+    val myLamp = SmartLamp("L01", "Ruang Tamu")
+    val mySpeaker = SmartSpeaker("S01", "Google Nest Dapur")
+    val myCCTV = SmartCCTV("C01", "Ezviz Garasi")
 }
