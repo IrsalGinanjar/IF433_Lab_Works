@@ -2,6 +2,7 @@ package oop_00000110698_MuhammadIrsalGinanjar.week09
 
 fun main() {
     val tradeHistory = listOf(
+        // ... (data tradeHistory) ...
         TradeLog("BTCUSDT", "LONG", 20, 15.5, "CLOSED"),
         TradeLog("ETHUSDT", "SHORT", 10, -5.2, "CLOSED"),
         TradeLog("BTCUSDT", "LONG", 50, 45.0, "OPEN"),
@@ -9,4 +10,6 @@ fun main() {
         TradeLog("ETHUSDT", "LONG", 15, -12.0, "CLOSED"),
         TradeLog("SOLUSDT", "LONG", 10, -1.5, "OPEN")
     )
+
+    val closedTrades = tradeHistory.filter { it.status == "CLOSED" }
 }
