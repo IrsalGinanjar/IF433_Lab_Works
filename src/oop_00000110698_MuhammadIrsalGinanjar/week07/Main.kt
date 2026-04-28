@@ -4,7 +4,15 @@ fun main() {
     println("\n=== TUGAS: RPG ENGINE ===")
     GameManager.startGame()
 
-    println("\n=> Drop Chance Legendary: ${ItemRarity.LEGENDARY.dropChance}%")
     val starterWeapon = Weapon.forgeStarterSword()
-    println("=> Senjata dibuat: ${starterWeapon.item.name} | Damage: ${starterWeapon.item.damage} | Durability: ${starterWeapon.durability}")
+
+    println("\n=> Blacksmith Upgrade...")
+    val upgradedItem = starterWeapon.item.copy(damage = 25)
+    println("Senjata di-upgrade: ${upgradedItem.name} | Damage baru: ${upgradedItem.damage}")
+
+    println("\n=> Simulasi Event Pertarungan...")
+    processEvent(BattleState.SafeZone)
+    processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+    processEvent(BattleState.LootDropped(upgradedItem))
+    processEvent(BattleState.GameOver("Terkena jebakan racun"))
 }
