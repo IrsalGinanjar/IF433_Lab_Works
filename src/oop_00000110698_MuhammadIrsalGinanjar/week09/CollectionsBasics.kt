@@ -1,6 +1,7 @@
 package oop_00000110698_MuhammadIrsalGinanjar.week09
 
 fun main() {
+    // ... (Test List & Set sebelumnya tetap ada di sini) ...
     println("=== TEST LIST ===")
     val frameworks: List<String> = listOf("Kotlin", "Java", "C++")
     println("Immutable List: $frameworks")
@@ -11,10 +12,22 @@ fun main() {
 
     println("\n=== TEST SET ===")
     val uniqueNumbers = setOf(1, 2, 2, 3, 3, 4)
-    println("Unique Numbers (Set): $uniqueNumbers") // Duplikat hilang
-
+    println("Unique Numbers (Set): $uniqueNumbers")
     val activeUsers = mutableSetOf("UserA", "UserB")
     activeUsers.add("UserC")
-    activeUsers.add("UserA") // Diabaikan karena sudah ada
+    activeUsers.add("UserA")
     println("Active Users: $activeUsers")
+
+    println("\n=== TEST MAP ===")
+    val studentGrades = mapOf(
+        "Alice" to "A",
+        "Bob" to "B",
+        "Charlie" to "A" // Value boleh duplikat, Key tidak
+    )
+    println("Nilai Bob: ${studentGrades["Bob"]}")
+
+    val inventory = mutableMapOf("Apples" to 50, "Bananas" to 30)
+    inventory["Oranges"] = 20 // Menambah data baru
+    inventory["Apples"] = 45 // Mengupdate data Lama
+    println("Inventory: $inventory")
 }
