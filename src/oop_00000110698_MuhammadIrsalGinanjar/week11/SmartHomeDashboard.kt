@@ -4,18 +4,17 @@ fun main() {
     val homeDevices = mutableListOf<SmartDevice>()
 
     SmartDevice("", "", false, 0).apply {
-        name = "Philips WiZ Living Room"
-        category = "Lighting"
-        isOnline = true
-        powerLoad = 12
+        name = "Philips WiZ Living Room"; category = "Lighting"; isOnline = true; powerLoad = 12
     }.also { homeDevices.add(it) }
 
-    // 5. Konfigurasi Keamanan (also & apply)
     SmartDevice("Ezviz Outdoor", "Camera").apply {
-        isOnline = true
-        powerLoad = 5
-    }.also {
-        println("(LOG) Kamera terhubung")
-        homeDevices.add(it)
+        isOnline = true; powerLoad = 5
+    }.also { println("(LOG) Kamera terhubung"); homeDevices.add(it) }
+
+    // 6. Konfigurasi AC & Kabel (run)
+    val ac = run {
+        SmartDevice("Daikin Inverter (Kabel 3x2.5)", "HVAC", false, 800)
     }
+    homeDevices.add(ac)
+    homeDevices.add(SmartDevice("Picolo's Auto Feeder", "Pet Care", true, 10))
 }
