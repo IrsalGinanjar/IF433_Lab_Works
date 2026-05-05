@@ -1,7 +1,6 @@
 package oop_00000110698_MuhammadIrsalGinanjar.week11
 
 fun main() {
-    // ... (Biarkan kode list devices dan search di atasnya)
     val homeDevices = mutableListOf<SmartDevice>()
     SmartDevice("", "", false, 0).apply { name = "Philips WiZ Living Room"; category = "Lighting"; isOnline = true; powerLoad = 12 }.also { homeDevices.add(it) }
     SmartDevice("Ezviz Outdoor", "Camera").apply { isOnline = true; powerLoad = 5 }.also { println("(LOG) Kamera terhubung"); homeDevices.add(it) }
@@ -9,8 +8,11 @@ fun main() {
     homeDevices.add(SmartDevice("Picolo's Auto Feeder", "Pet Care", true, 10))
 
     println("\n=== SMART HOME DASHBOARD ===")
-    // 8. Menggunakan with untuk Format Summary
     with(homeDevices) {
         println("Jumlah perangkat terdaftar: ${this.size}")
     }
+
+    // 9. Kalkulasi Daya dengan run
+    val totalPower = homeDevices.run { sumOf { it.powerLoad } }
+    println("Estimasi Total Daya: $totalPower Watt")
 }
