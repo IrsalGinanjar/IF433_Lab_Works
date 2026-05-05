@@ -3,12 +3,11 @@ package oop_00000110698_MuhammadIrsalGinanjar.week11
 data class User(var name: String = "", var age: Int = 0)
 
 fun main() {
-    // ... (Code sebelumnya tetap ada)
-    val user = User().apply { name = "Alex"; age = 25 }
-    val numbers = mutableListOf(1, 2, 3).also { println("Log Sebelum: $it") }.apply { add(4) }
-
-    println("\n=== TEST WITH ===")
-    with(user) {
-        println("User Detail -> Nama: $name, Umur: $age")
+    // ... (Test apply, also, with dari langkah 7, 8, 9 biarkan di sini jika mau, atau timpa dengan kode di bawah ini saja)
+    println("=== TEST GABUNGAN ===")
+    val newUser = User("Budi", 20).apply {
+        age = 21 // Mengubah umur
+    }.also {
+        println("User baru berhasil dibuat: $it")
     }
 }
