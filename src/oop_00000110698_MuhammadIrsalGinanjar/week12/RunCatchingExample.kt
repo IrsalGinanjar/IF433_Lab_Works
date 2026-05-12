@@ -8,11 +8,19 @@ fun main() {
         "42X".toInt()
     }
 
-    // Checkpoint 7: Pattern getOrElse
+    // Checkpoint 7
     val safeValue = result.getOrElse { -1 }
     println("Safe Value (getOrElse): $safeValue")
 
-    // Checkpoint 7: Pattern recover
     val recovered = result.recover { 0 }.getOrNull()
     println("Recovered Value: $recovered")
+
+    // Checkpoint 8: Chaining
+    runCatching {
+        "100".toInt()
+    }.onSuccess { v ->
+        println("Berhasil dikonversi: $v")
+    }.onFailure { e ->
+        println("Gagal konversi: ${e.message}")
+    }
 }
